@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Tugas by Ge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<div class="container">
+    <div class="todo-app-title">
+        <div class="title">
+            <h2 class="cssanimation typing sequence">To-do List by Ge <img src="assets/ge.jpg" alt=""></h2>
+        </div>
+    </div>
+    
+    <div class="todo-app">
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Tambah Tugas">
+        </div>
+
+        <div class="row">
+            <input type="date" id="due-date" placeholder="Tanggal Jatuh Tempo"><br>
+        </div>
+
+        <div class="priority-container">
+            <select id="priority" class="priority-select">
+                <option value="low">🟢 Rendah</option>
+                <option value="medium">🟡 Sedang</option>
+                <option value="high">🔴 Tinggi</option>
+            </select>
+        </div>
+
+        <div class="button-container">
+            <button onclick="addTask()">+ Tambah</button>
+        </div>
+    </div>
+
+    <div class="todo-app">
+        <div class="button-container">
+            <button onclick="filterTasks('all')">Semua</button>
+            <button onclick="filterTasks('active')">Aktif</button>
+            <button onclick="filterTasks('completed')">Selesai</button>
+        </div>
+
+        <div class="button-container">
+            <button onclick="sortTasksByDueDate()">Urutkan Berdasarkan Tenggat</button>
+            
+        </div>
+
+        <a class="date-group-label">Kelompokkan tugas berdasarkan tanggal :</a>
+
+        <div class="row">
+            <input type="date" id="filter-date" onchange="filterTasksByDate()">
+        </div>
+
+        <div class="button-container">
+            <button onclick="filterByPriority('low')">Rendah 🟢</button>
+            <button onclick="filterByPriority('medium')">Sedang 🟡</button>
+            <button onclick="filterByPriority('high')">Tinggi 🔴</button>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div class="progress-text" id="progress-text">0/0</div>
+
+        
+        <ul id="list-container"></ul>
+        
+        <div class="button-container-delete">
+            <button onclick="deleteAllTasks()">Hapus Semua</button> 
+        </div>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
